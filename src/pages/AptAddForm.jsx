@@ -1,8 +1,11 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
 import { useNavigate } from "react-router-dom"
 import axios from "axios"
+import { ThemeContext } from "../context/theme.context"
 
 function AptAddForm() {
+
+  const { btnThemeClassName } = useContext(ThemeContext)
 
   const navigate = useNavigate()
 
@@ -66,7 +69,7 @@ function AptAddForm() {
 
         <br />
 
-        <button onClick={handleCreateApt}>Agregar</button>
+        <button className={btnThemeClassName} onClick={handleCreateApt}>Agregar</button>
 
       </form>
 
